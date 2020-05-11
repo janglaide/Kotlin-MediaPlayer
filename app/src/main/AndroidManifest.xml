@@ -9,8 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".AudioActivity"></activity>
-        <activity android:name=".VideoActivity" />
+        <activity android:name=".video.VideoPlayActivity"></activity>
+        <activity android:name=".audio.AudioPlayActivity" />
+        <activity android:name=".audio.AudioActivity" />
+        <activity android:name=".video.VideoActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

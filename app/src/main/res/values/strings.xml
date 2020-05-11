@@ -8,4 +8,6 @@
     <string name="play">Play</string>
     <string name="pause">Pause</string>
     <string name="stop">Stop</string>
+    <string name="from_the_list">From the list</string>
+    <string name="choose_music_from_the_list">Choose music from the list</string>
 </resources>
