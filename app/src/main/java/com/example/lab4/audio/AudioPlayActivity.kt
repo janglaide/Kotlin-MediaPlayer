@@ -1,14 +1,14 @@
 package com.example.lab4.audio
 
-import android.annotation.SuppressLint
+import android.media.AudioManager
 import android.media.MediaPlayer
-import androidx.appcompat.app.AppCompatActivity
+import android.net.Uri
 import android.os.Bundle
 import android.os.Handler
-import android.os.Message
 import android.view.View
 import android.widget.SeekBar
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.example.lab4.R
 import kotlinx.android.synthetic.main.activity_audio_play.*
 
@@ -26,9 +26,15 @@ class AudioPlayActivity() : AppCompatActivity() {
         val actionBar = supportActionBar
         actionBar!!.title = "Audios"
 
-        mPlayer = MediaPlayer.create(this, R.raw.joy_division_love_will_tear_us_apart)
-
-        mPlayer.start()
+        val arguments: Bundle? = intent.extras
+        val audioId = arguments?.get("chosenId")
+        //val audioId = R.raw.joy_division_love_will_tear_us_apart
+        val myUri = Uri.parse("android.resource://$packageName/$audioId")
+        mPlayer = MediaPlayer().apply {
+            setDataSource(this@AudioPlayActivity, myUri)
+            prepare()
+            start()
+        }
 
         initializeSeekBar()
 
