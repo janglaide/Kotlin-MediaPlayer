@@ -44,7 +44,7 @@ class VideoActivity : AppCompatActivity() {
                 )
                 Toast.makeText(
                     this@VideoActivity,
-                    "Chosen ${videos[position].Name}",
+                    "Chosen ${videos[position].name}",
                     Toast.LENGTH_SHORT
                 ).show()
                 chosen = videos[position]
@@ -56,8 +56,8 @@ class VideoActivity : AppCompatActivity() {
     }
     fun onClicked(view: View){
         val intent = Intent(this, VideoPlayActivity::class.java)
-        intent.putExtra("chosenUrl",chosen.Url)
-        intent.putExtra("chosenName", chosen.Name)
+        intent.putExtra("chosenUrl",chosen.url)
+        intent.putExtra("chosenName", chosen.name)
         startActivity(intent)
     }
 }

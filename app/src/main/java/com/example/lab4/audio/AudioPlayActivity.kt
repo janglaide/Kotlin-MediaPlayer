@@ -1,5 +1,6 @@
 package com.example.lab4.audio
 
+import android.annotation.SuppressLint
 import android.media.MediaPlayer
 import android.net.Uri
 import android.os.Bundle
@@ -51,24 +52,21 @@ class AudioPlayActivity() : AppCompatActivity() {
                 }
             }
 
-            override fun onStartTrackingTouch(seekBar: SeekBar?) {
+            override fun onStartTrackingTouch(seekBar: SeekBar?) { }
 
-            }
-
-            override fun onStopTrackingTouch(seekBar: SeekBar?) {
-
-            }
+            override fun onStopTrackingTouch(seekBar: SeekBar?) { }
         })
+    }
 
-        }
+    @SuppressLint("SetTextI18n")
     private fun initializeSeekBar() {
         audioSeekBar.max = mPlayer.duration / 1000
+        showTime.text = ""
+        showTime.append((mPlayer.duration / 1000 / 60).toString() + " min, " +
+                (mPlayer.duration / 1000 % 60).toString() + " sec")
 
         runnable = Runnable {
             audioSeekBar.progress = mPlayer.currentPosition / 1000
-
-            val diff = mPlayer.duration / 1000 - mPlayer.currentPosition / 1000
-
             handler.postDelayed(runnable, 1000)
         }
         handler.postDelayed(runnable, 1000)
@@ -77,9 +75,11 @@ class AudioPlayActivity() : AppCompatActivity() {
     fun onPlay(view: View){
         mPlayer.start()
     }
+
     fun onPause(view: View){
         mPlayer.pause()
     }
+
     fun onStop(view: View){
         mPlayer.stop()
         finish()

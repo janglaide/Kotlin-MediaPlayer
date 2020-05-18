@@ -1,7 +1,7 @@
 package com.example.lab4.video
 
-class Video(url: String, name: String) {
-    val Url: String = url
-    val Name: String = name
+class Video(Url: String, Name: String) {
+    val url: String = Url
+    val name: String = Name
 
 }

@@ -1,6 +1,6 @@
 package com.example.lab4.audio
 
-class Audio(id: Int, name: String) {
-    var Id: Int = id
-    var Name: String = name
+class Audio(Id: Int, Name: String) {
+    var id: Int = Id
+    var name: String = Name
 }

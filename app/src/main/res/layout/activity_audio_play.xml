@@ -35,5 +35,15 @@
         android:layout_marginTop="30sp">
 
     </SeekBar>
+    <TextView
+        android:id="@+id/showTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15sp"
+        android:layout_marginLeft="20sp"
+        android:text=""
+        android:layout_marginStart="20sp">
+
+    </TextView>
 
 </LinearLayout>
