@@ -10,4 +10,18 @@
     <string name="stop">Stop</string>
     <string name="from_the_list">From the list</string>
     <string name="choose_music_from_the_list">Choose music from the list</string>
+    <string name="click">Click</string>
+
+    <string-array name="audios">
+        <item>joy division - love will tear us apart</item>
+        <item>pink floyd - comfortably numb</item>
+    </string-array>
+    <string-array name="videos">
+        <item>Bunny animation</item>
+        <item>Sintel animation</item>
+    </string-array>
+    <string-array name="videoUrls">
+        <item>https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4</item>
+        <item>https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4</item>
+    </string-array>
 </resources>

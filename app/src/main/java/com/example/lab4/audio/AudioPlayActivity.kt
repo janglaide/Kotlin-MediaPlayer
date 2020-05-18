@@ -1,6 +1,5 @@
 package com.example.lab4.audio
 
-import android.media.AudioManager
 import android.media.MediaPlayer
 import android.net.Uri
 import android.os.Bundle
@@ -23,12 +22,12 @@ class AudioPlayActivity() : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_audio_play)
 
-        val actionBar = supportActionBar
-        actionBar!!.title = "Audios"
-
         val arguments: Bundle? = intent.extras
         val audioId = arguments?.get("chosenId")
-        //val audioId = R.raw.joy_division_love_will_tear_us_apart
+
+        val actionBar = supportActionBar
+        actionBar!!.title = arguments?.get("chosenName").toString()
+
         val myUri = Uri.parse("android.resource://$packageName/$audioId")
         mPlayer = MediaPlayer().apply {
             setDataSource(this@AudioPlayActivity, myUri)
